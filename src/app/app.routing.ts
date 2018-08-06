@@ -7,9 +7,11 @@ import {SectionsComponent} from './sections/sections.component';
 import {EnrollmentComponent} from './enrollment/enrollment.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {CourseComponent} from './course/course.component';
+import {AdminComponent} from './admin/admin.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'course/:courseId', component: CourseComponent},
   {path: 'sections', component: SectionsComponent},
   {path: 'enroll/:courseId', component: EnrollmentComponent},

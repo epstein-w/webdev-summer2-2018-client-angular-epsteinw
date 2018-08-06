@@ -17,4 +17,12 @@ export class UserServiceClient {
       credentials: 'include'
     }).then(res => res.json())
 
+  createUser = user => fetch('http://localhost:3000/register', {
+    credentials: 'include',
+    method: 'post',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(user)
+  })
 }

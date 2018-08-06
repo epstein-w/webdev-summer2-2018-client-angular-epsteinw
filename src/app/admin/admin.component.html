@@ -1,0 +1,35 @@
+<h2>Administration</h2>
+<div class="row">
+  <div class="col-sm-4">
+    <ul class="list-group">
+      <li *ngFor="let course of courses"
+          (click)="selectCourse(course)"
+          [ngClass]="{'active' : selectedCourse.id === course.id}"
+          class="list-group-item">
+        {{course.title}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-sm-8">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <label>
+          Title
+          <input [(ngModel)]="sectionTitle" placeholder="Section Title"/>
+        </label>
+        <label>
+          Capacity
+          <input [(ngModel)]="sectionCap" placeholder="Section Capacity"/>
+        </label>
+        <button (click)="addSection(sectionTitle, sectionCap)" class="text-primary">+</button>
+
+      </li>
+      <li *ngFor="let section of sections"
+          class="list-group-item">
+        {{section.title}} has <i>{{section.capacity}}</i> seats left
+        <button (click)="deleteSection(section)" class="float-right btn-danger">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>
