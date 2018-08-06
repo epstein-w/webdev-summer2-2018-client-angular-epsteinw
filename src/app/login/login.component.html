@@ -1,0 +1,13 @@
+<div>
+  <h2>Login</h2>
+  <label>
+    <input [(ngModel)]="username" class="form-control" placeholder="Login"/>
+  </label>
+  <label>
+    <input [(ngModel)]="password" class="form-control" placeholder="password"/>
+  </label>
+  <button (click)="login(username, password)" class="btn btn-primary btn-block">
+    Login
+  </button>
+
+</div>
