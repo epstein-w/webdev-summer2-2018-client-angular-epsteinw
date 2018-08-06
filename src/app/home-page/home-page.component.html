@@ -1,0 +1,13 @@
+<div class="card-column">
+  <div *ngFor="let course of courses"
+       (click)="selectCourse(course)"
+        class="card">
+          <div class="card-body">
+            <h5>{{course.title}}</h5>
+          </div>
+  </div>
+</div>
+
+
+
+

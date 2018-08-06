@@ -5,10 +5,14 @@ import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
 import {SectionsComponent} from './sections/sections.component';
 import {EnrollmentComponent} from './enrollment/enrollment.component';
+import {HomePageComponent} from './home-page/home-page.component';
+import {CourseComponent} from './course/course.component';
 
 const appRoutes: Routes = [
+  {path: '', component: HomePageComponent},
+  {path: 'course/:courseId', component: CourseComponent},
   {path: 'sections', component: SectionsComponent},
-  {path: 'enrollment', component: EnrollmentComponent},
+  {path: 'enroll/:courseId', component: EnrollmentComponent},
   {path: 'courses', component: CourseNavigatorComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},

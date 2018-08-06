@@ -1,0 +1,33 @@
+
+<div class="bg-dark">
+  <h2  style="margin-left: 5px" class="text-white"> {{course.title}}
+    <a style="margin-right: 5px" class='float-right left-align' [routerLink]="['/enroll', courseId]">Enroll!</a> </h2>
+  <div class="row">
+
+      <div class="col-md-4">
+        <ul className="list-group list-group-flush">
+          <li *ngFor="let module of course.modules"
+              (click)="selectModule(module)"
+              class="list-group-item">
+              {{module.title}}
+          </li>
+        </ul>
+      </div>
+
+
+    <div class="col-md-8">
+      <ul class="nav nav-tabs">
+        <li *ngFor="let lesson of selectedModule.lessons"
+            (click)="selectLesson(lesson)" class="list-group-item" >
+            <!--[ngClass]="{'active' : selectedLesson.id === lesson.id}"-->
+
+          {{lesson.title}}
+        </li>
+      </ul>
+      <div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
