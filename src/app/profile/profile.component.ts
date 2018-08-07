@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
    this.UserService.currentUser()
-     .then(u => this.currentUser = u);
+     .then(u => this.currentUser = u[0]);
   }
 
 }
