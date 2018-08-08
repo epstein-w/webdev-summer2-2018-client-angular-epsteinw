@@ -15,6 +15,7 @@ import {SectionServiceClient} from './services/section.service.client';
 import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CourseComponent } from './course/course.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CourseComponent } from './course/course.component';
     SectionsComponent,
     EnrollmentComponent,
     HomePageComponent,
-    CourseComponent
+    CourseComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

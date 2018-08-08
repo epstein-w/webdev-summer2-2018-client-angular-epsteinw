@@ -1,3 +1,42 @@
-<h2>
-  {{currentUser.firstName}}
-</h2>
+<div class="row">
+  <div class="col-sm-4">
+    <h2>
+      Welcome {{user.username}}
+    </h2>
+  </div>
+  <div class="col-sm-4">
+    <a routerLink="/"><h2> All Courses </h2> </a>
+  </div>
+  <div class="col-sm-4">
+    <button (click)="logout()" class="btn btn-danger btn-block">Logout</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <h3>
+      User Info:
+    </h3>
+      <label>
+        <b>Username:</b> <input [(ngModel)]="user.username" class="form-control" placeholder="Login"/>
+      </label>
+      <label>
+        <b>Firstname:</b> <input [(ngModel)]="firstName" class="form-control" placeholder="firstname"/>
+      </label>
+      <label>
+        <b>Lastname: </b>
+        <input [(ngModel)]="lastName" class="form-control" placeholder="lastname"/>
+      </label>
+
+    <button class="btn btn-block btn-info" (click)="update(user)">Update</button>
+    <button class="btn btn-block btn-danger" (click)="delete(user)">Delete</button>
+  </div>
+  <div class="col-sm-8">
+    <ul class="list-group">
+      <li *ngFor="let section of user.sections"
+          (click)="selectSection(section)"
+          class="list-group-item">
+        {{section.title}}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -9,5 +9,6 @@ export class CourseServiceClient {
   findCourseById = courseId => {
     return (fetch('http://localhost:8080/api/course/' + courseId)
       .then(response => response.json()));
+  }
 
 }
