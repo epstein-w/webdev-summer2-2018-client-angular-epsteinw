@@ -23,8 +23,7 @@ export class ProfileComponent implements OnInit {
       firstName: this.firstName,
       lastName: this.lastName,
       sections: user.sections
-    })
-      .then(u => this.user = u);
+    });
   }
   delete(user) {
     this.UserService.deleteUser(user)
@@ -34,7 +33,7 @@ export class ProfileComponent implements OnInit {
     this.UserService.logout();
   }
   selectSection(section) {
-    this.router.navigate(['course', section.courseId]);
+    this.router.navigate(['', section.courseId]);
   }
   ngOnInit() {
    this.UserService.currentUser()

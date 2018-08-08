@@ -25,7 +25,12 @@
         </li>
       </ul>
       <div>
-
+        <ul class="list-group">
+          <li *ngFor="let widget of widgets"
+              class="list-group-item">
+            {{widget.title}} - {{widget.type}}
+          </li>
+        </ul>
       </div>
     </div>
 

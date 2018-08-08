@@ -22,24 +22,27 @@ export class CourseComponent implements OnInit {
   };
   selectedLesson: {
   };
+  widgets: [{
+    title: String;
+  }];
   selectModule = (module) => {
-    console.log('select mod ' + module.title);
-    console.log(this.selectedModule);
     this.selectedModule = module;
+    this.selectedLesson = module.lessons[0];
+    this.widgets = module.lessons[0].widgets;
   }
   selectLesson = lesson => {
-    console.log('select lesson ' + lesson.title);
     this.selectedLesson = lesson;
+    this.widgets = lesson.widgets;
   }
   constructor(route: ActivatedRoute, private courseService: CourseServiceClient) {
     this.courseId = parseInt(window.location.href.split('/').reverse()[0], 10);
   }
-
   ngOnInit() {
     this.courseService.findCourseById(this.courseId)
       .then(courses => this.course = courses)
       .then( () => this.selectedModule = this.course.modules[0])
-      .then(() => this.selectedLesson = this.selectedModule.lessons[0]);
+      .then(() => this.selectedLesson = this.course.modules[0].lessons[0]);
+      // .then( () => this.widgets = this.course.modules[0].lessons[0].widgets);
   }
 
 }
