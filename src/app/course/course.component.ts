@@ -25,6 +25,7 @@ export class CourseComponent implements OnInit {
   widgets: [{
     title: String;
   }];
+  listP: [String];
   selectModule = (module) => {
     this.selectedModule = module;
     this.selectedLesson = module.lessons[0];
@@ -33,6 +34,16 @@ export class CourseComponent implements OnInit {
   selectLesson = lesson => {
     this.selectedLesson = lesson;
     this.widgets = lesson.widgets;
+  }
+  listPieces = widget => {
+    console.log(widget);
+    if (widget.widgetType === 'LIST') {
+      this.listP = widget.listItems.split('\n');
+    }
+   console.log(this.listP);
+  }
+  write = s => {
+    console.log(s);
   }
   constructor(route: ActivatedRoute, private courseService: CourseServiceClient) {
     this.courseId = parseInt(window.location.href.split('/').reverse()[0], 10);
