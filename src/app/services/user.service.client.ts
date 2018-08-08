@@ -4,7 +4,7 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class UserServiceClient {
   login = (user) =>
-    fetch('http://localhost:3000/login', {
+    fetch(' https://quiet-bastion-67126.herokuapp.com/login', {
       method: 'post',
       credentials: 'include',
       headers: {
@@ -13,11 +13,11 @@ export class UserServiceClient {
       body: JSON.stringify(user)
     })
 
-  currentUser = () => fetch('http://localhost:3000/currentUser', {
+  currentUser = () => fetch(' https://quiet-bastion-67126.herokuapp.com/currentUser', {
       credentials: 'include'
     }).then(res => res.json())
 
-  createUser = user => fetch('http://localhost:3000/register', {
+  createUser = user => fetch(' https://quiet-bastion-67126.herokuapp.com/register', {
     credentials: 'include',
     method: 'post',
     headers: {
@@ -25,11 +25,11 @@ export class UserServiceClient {
     },
     body: JSON.stringify(user)
   })
-  logout = () => fetch('http://localhost:3000/logout',  {
+  logout = () => fetch(' https://quiet-bastion-67126.herokuapp.com/logout',  {
     credentials: 'include',
     method: 'post',
   })
-  updateUser = user => fetch('http://localhost:3000/profile',  {
+  updateUser = user => fetch(' https://quiet-bastion-67126.herokuapp.com/profile',  {
       method: 'put',
       body: JSON.stringify(user),
       credentials: 'include',
@@ -37,7 +37,7 @@ export class UserServiceClient {
         'content-type': 'application/json'
       }
     })
-  deleteUser = user => fetch('http://localhost:3000/profile', {
+  deleteUser = user => fetch(' https://quiet-bastion-67126.herokuapp.com/profile', {
     method: 'delete',
     body: JSON.stringify(user),
     credentials: 'include',

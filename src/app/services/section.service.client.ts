@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class SectionServiceClient {
-  createSection = section => fetch('http://localhost:3000/api/section', {
+  createSection = section => fetch(' https://quiet-bastion-67126.herokuapp.com/api/section', {
       method: 'post',
       headers: {
         'content-type': 'application/json'
@@ -11,7 +11,7 @@ export class SectionServiceClient {
     credentials: 'include',
     body: JSON.stringify(section)
     })
-  createSectionForCourse = (course, section) => fetch ('http://localhost:3000/api/course/' + course.id + '/section/', {
+  createSectionForCourse = (course, section) => fetch (' https://quiet-bastion-67126.herokuapp.com/api/course/' + course.id + '/section/', {
     method: 'post',
     headers: {
       'content-type': 'application/json'
@@ -19,7 +19,7 @@ export class SectionServiceClient {
     credentials: 'include',
     body: JSON.stringify(section)
   })
-  editSection = section => fetch('http://localhost:3000/api/section', {
+  editSection = section => fetch(' https://quiet-bastion-67126.herokuapp.com/api/section', {
     method: 'put',
   headers: {
     'content-type': 'application/json'
@@ -27,18 +27,18 @@ export class SectionServiceClient {
   credentials: 'include',
   body: JSON.stringify(section)
   })
-  deleteSection = section => fetch ('http://localhost:3000/api/section', {
+  deleteSection = section => fetch (' https://quiet-bastion-67126.herokuapp.com/api/section', {
     method: 'delete',
     headers: {
       'content-type': 'application/json'
     },
     body: JSON.stringify(section)
   })
-  findSectionsForCourse = cid => fetch('http://localhost:3000/api/course/' + cid + '/section')
+  findSectionsForCourse = cid => fetch(' https://quiet-bastion-67126.herokuapp.com/api/course/' + cid + '/section')
       .then( response => response.json())
-  findAllSections = () => fetch('http://localhost:3000/api/section/')
+  findAllSections = () => fetch(' https://quiet-bastion-67126.herokuapp.com/api/section/')
       .then(response => response.json())
-  enroll = sectionId => fetch('http://localhost:3000/api/section/' + sectionId + '/enroll', {
+  enroll = sectionId => fetch(' https://quiet-bastion-67126.herokuapp.com/api/section/' + sectionId + '/enroll', {
     method: 'put',
     credentials: 'include'
   })
