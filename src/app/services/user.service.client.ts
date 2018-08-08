@@ -25,4 +25,24 @@ export class UserServiceClient {
     },
     body: JSON.stringify(user)
   })
+  logout = () => fetch('http://localhost:3000/logout',  {
+    credentials: 'include',
+    method: 'post',
+  })
+  updateUser = user => fetch('http://localhost:3000/profile',  {
+      method: 'put',
+      body: JSON.stringify(user),
+      credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+  deleteUser = user => fetch('http://localhost:3000/profile', {
+    method: 'delete',
+    body: JSON.stringify(user),
+    credentials: 'include',
+    headers: {
+      'content-type': 'application/json'
+    }
+  })
 }
