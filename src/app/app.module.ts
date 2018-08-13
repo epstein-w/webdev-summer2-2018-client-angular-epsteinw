@@ -16,6 +16,9 @@ import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CourseComponent } from './course/course.component';
 import { AdminComponent } from './admin/admin.component';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
+import {QuizServiceClient} from './services/quiz.service.client';
+import { QuizTakerComponent } from './quiz-taker/quiz-taker.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { AdminComponent } from './admin/admin.component';
     EnrollmentComponent,
     HomePageComponent,
     CourseComponent,
-    AdminComponent
+    AdminComponent,
+    QuizListComponent,
+    QuizTakerComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import { AdminComponent } from './admin/admin.component';
   providers: [
     CourseServiceClient,
     UserServiceClient,
-    SectionServiceClient
+    SectionServiceClient,
+    QuizServiceClient
   ],
   bootstrap: [AppComponent]
 })
