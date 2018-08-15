@@ -1,5 +1,8 @@
 <h2>Quiz Taker</h2>
-<h3>{{quiz.title}}</h3>
+<h3>{{quiz.title}}
+  <button (click)="submitQuiz(quiz)" class="float-right btn btn-info">Submit</button>
+</h3>
+
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let question of quiz.questions">
     <h4>{{question.title}}</h4>
@@ -8,10 +11,14 @@
     </span>
     <p>{{question.description}}</p>
     <div [ngSwitch]="question.questionType">
-      <div *ngSwitchCase="'TRUE_FALSE'"><h5>True False</h5></div>
-      <div *ngSwitchCase="'FILL_BLANKS'"><h5>Fill in the blanks</h5></div>
-      <div *ngSwitchCase="'CHOICE'"><h5>Multiple Choice</h5></div>
-      <div *ngSwitchCase="'ESSAY'"><h5>Essay</h5></div>
+      <app-true-false-question
+        [question]="question" *ngSwitchCase="'TRUE_FALSE'"></app-true-false-question>
+      <app-fill-blanks-question
+        [question]="question" *ngSwitchCase="'FILL_BLANKS'"></app-fill-blanks-question>
+      <app-multiple-choice-question
+        [question]="question" *ngSwitchCase="'CHOICE'"></app-multiple-choice-question>
+      <app-essay-question
+        [question]="question" *ngSwitchCase="'ESSAY'"></app-essay-question>
     </div>
 
   </li>
