@@ -1,0 +1,7 @@
+<h3>Submissions for: {{quiz.title}}</h3>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item-info" *ngFor="let submission of submissions">
+    <a  href="/quiz/{{quiz._id}}/submission/{{submission._id}}"  class="list-group-item">{{submission.student.username}}'s Submission</a>
+  </li>
+</ul>

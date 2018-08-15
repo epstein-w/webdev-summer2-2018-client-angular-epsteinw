@@ -1,6 +1,6 @@
 <h2>Quiz Taker</h2>
 <h3>{{quiz.title}}
-  <button (click)="submitQuiz(quiz)" class="float-right btn btn-info">Submit</button>
+
 </h3>
 
 <ul class="list-group">
@@ -20,6 +20,18 @@
       <app-essay-question
         [question]="question" *ngSwitchCase="'ESSAY'"></app-essay-question>
     </div>
-
   </li>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-5">
+      <button class="btn btn-block btn-danger" (click)="reload()">Cancel</button>
+    </div>
+    <div class="col-sm-5">
+      <button (click)="submitQuiz(quiz)" class="btn btn-block btn-info">Submit</button>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+
+
 </ul>

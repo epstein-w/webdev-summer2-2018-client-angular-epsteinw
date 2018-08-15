@@ -1,0 +1,7 @@
+<span [ngSwitch]="blank.indexOf('*')" *ngFor="let blank of question.blanks">
+  <span *ngSwitchCase="-1"> {{blank}} </span>
+  <span *ngSwitchCase="0">
+    <input [(ngModel)]="submission.fillBlanksAnswers[blank.split('=')[0].replace('*', '')]"  style="border-color: black"> </span>
+
+</span>
+

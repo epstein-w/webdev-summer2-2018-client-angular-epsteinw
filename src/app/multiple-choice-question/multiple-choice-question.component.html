@@ -1,8 +1,10 @@
 <h4>Multiple Choice Question</h4>
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let choice of question.choices">
+  <li class="list-group-item" [ngClass]="{'active': this.selectedChoice.text == choice.text}" *ngFor="let choice of question.choices  ">
     <label>
-      <input (click)="selected(choice)" name="{{question._id}}" type="radio"> {{choice.text}}
+      <input (click)="selected(choice)" name="{{question._id}}" type="radio"
+
+      > {{choice.text}}
     </label>
   </li>
 </ul>

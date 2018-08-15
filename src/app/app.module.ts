@@ -23,6 +23,12 @@ import { TrueFalseQuestionComponent } from './true-false-question/true-false-que
 import { FillBlanksQuestionComponent } from './fill-blanks-question/fill-blanks-question.component';
 import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
 import { EssayQuestionComponent } from './essay-question/essay-question.component';
+import { QuizSubmissionComponent } from './quiz-submission/quiz-submission.component';
+import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
+import { TrueFalseAnswerComponent } from './true-false-answer/true-false-answer.component';
+import { FillBlanksAnswerComponent } from './fill-blanks-answer/fill-blanks-answer.component';
+import { MultipleChoiceAnswerComponent } from './multiple-choice-answer/multiple-choice-answer.component';
+import { EssayAnswerComponent } from './essay-answer/essay-answer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +48,13 @@ import { EssayQuestionComponent } from './essay-question/essay-question.componen
     TrueFalseQuestionComponent,
     FillBlanksQuestionComponent,
     MultipleChoiceQuestionComponent,
-    EssayQuestionComponent
+    EssayQuestionComponent,
+    QuizSubmissionComponent,
+    QuizAnswersComponent,
+    TrueFalseAnswerComponent,
+    FillBlanksAnswerComponent,
+    MultipleChoiceAnswerComponent,
+    EssayAnswerComponent
   ],
   imports: [
     BrowserModule,
