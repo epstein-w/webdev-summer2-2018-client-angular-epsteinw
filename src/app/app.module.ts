@@ -16,6 +16,19 @@ import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CourseComponent } from './course/course.component';
 import { AdminComponent } from './admin/admin.component';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
+import {QuizServiceClient} from './services/quiz.service.client';
+import { QuizTakerComponent } from './quiz-taker/quiz-taker.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
+import { FillBlanksQuestionComponent } from './fill-blanks-question/fill-blanks-question.component';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
+import { EssayQuestionComponent } from './essay-question/essay-question.component';
+import { QuizSubmissionComponent } from './quiz-submission/quiz-submission.component';
+import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
+import { TrueFalseAnswerComponent } from './true-false-answer/true-false-answer.component';
+import { FillBlanksAnswerComponent } from './fill-blanks-answer/fill-blanks-answer.component';
+import { MultipleChoiceAnswerComponent } from './multiple-choice-answer/multiple-choice-answer.component';
+import { EssayAnswerComponent } from './essay-answer/essay-answer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +42,19 @@ import { AdminComponent } from './admin/admin.component';
     EnrollmentComponent,
     HomePageComponent,
     CourseComponent,
-    AdminComponent
+    AdminComponent,
+    QuizListComponent,
+    QuizTakerComponent,
+    TrueFalseQuestionComponent,
+    FillBlanksQuestionComponent,
+    MultipleChoiceQuestionComponent,
+    EssayQuestionComponent,
+    QuizSubmissionComponent,
+    QuizAnswersComponent,
+    TrueFalseAnswerComponent,
+    FillBlanksAnswerComponent,
+    MultipleChoiceAnswerComponent,
+    EssayAnswerComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +64,8 @@ import { AdminComponent } from './admin/admin.component';
   providers: [
     CourseServiceClient,
     UserServiceClient,
-    SectionServiceClient
+    SectionServiceClient,
+    QuizServiceClient
   ],
   bootstrap: [AppComponent]
 })
