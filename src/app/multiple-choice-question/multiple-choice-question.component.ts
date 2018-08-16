@@ -13,7 +13,6 @@ export class MultipleChoiceQuestionComponent implements OnInit {
   selected = choice => {
     this.question.multipleChoiceAnswer = this.question.choices.indexOf(choice);
     this.selectedChoice = choice;
-    console.log(this.selectedChoice.text);
   }
   ngOnInit() {
     this.selectedChoice = '';

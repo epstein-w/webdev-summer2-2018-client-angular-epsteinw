@@ -5,7 +5,7 @@
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let question of quiz.questions">
-    <h4>{{question.title}}</h4>
+    <h4>{{question.title}} -- {{question.questionType}}</h4>
     <span class="float-right">
       {{question.points}}
     </span>
