@@ -1,16 +1,16 @@
-<h2>{{quiz.title}} Submission for {{student.username}}</h2>
+<h2>{{quiz.title}} Submission</h2>
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let question of quiz.questions index as i">
 
-    <h4>{{question.title}}</h4>
+    <h4>{{question.title}} - {{question.questionType}}</h4>
     <span class="float-right">
       {{question.points}}
     </span>
     <p>{{question.description}}</p>
     <div [ngSwitch]="question.questionType">
       <app-true-false-answer [question]="question" [submission]="submission[0].answers[i]"
-         *ngSwitchCase="'TRUE_FALSE'">{{i}}</app-true-false-answer>
+         *ngSwitchCase="'TRUE_FALSE'">{{question.questionTpye == 'TRUE_FALSE'}}</app-true-false-answer>
       <app-fill-blanks-answer [question]="question"  [submission]="submission[0].answers[i]"
          *ngSwitchCase="'FILL_BLANKS'">{{i}}</app-fill-blanks-answer>
       <app-multiple-choice-answer [question]="question"  [submission]="submission[0].answers[i]"

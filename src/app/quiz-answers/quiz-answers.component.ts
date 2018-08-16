@@ -19,11 +19,14 @@ export class QuizAnswersComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.quizId = params['quizId'];
       this.service.findQuizById(this.quizId)
-        .then(q => this.quiz = q);
+        .then(q => {
+          this.quiz = q;
+          console.log("HERE!@!!");
+          console.log(this.quiz);
+        });
       this.service.findSubmissionByQuizId(params['quizId'], params['submissionId'])
         .then(s => {
-          this.submission = s;
-          console.log(s);
+          this.submission = s[0].answers;
         });
     });
   }
